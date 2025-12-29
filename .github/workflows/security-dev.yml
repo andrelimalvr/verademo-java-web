@@ -52,7 +52,7 @@ jobs:
         with:
           appname: 'm3academy-java-web'
           createprofile: true
-          teams: 'M3Academy'
+#         teams: 'M3Academy'
           filepath: 'verademo.war'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
