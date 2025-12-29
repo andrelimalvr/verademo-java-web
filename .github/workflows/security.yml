@@ -62,7 +62,7 @@ jobs:
           ls -l
 
       - name: upload and scan 
-        uses: veracode/veracode-uploadandscan-action@0.2.7
+        uses: veracode/veracode-uploadandscan-action@0.2.10
         with:
           appname: 'm3academy-java-web'
           createprofile: true

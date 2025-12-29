@@ -48,14 +48,14 @@ jobs:
           ls -l
 
       - name: upload and scan 
-        uses: veracode/veracode-uploadandscan-action@0.2.7
+        uses: veracode/veracode-uploadandscan-action@0.2.10
         with:
           appname: 'm3academy-java-web'
           createprofile: true
           teams: 'M3Academy'
           filepath: 'verademo.war'
-          vid: '${{ secrets.VID }}'
-          vkey: '${{ secrets.VKEY }}'
+          vid: '${{ secrets.VERACODE_API_ID }}'
+          vkey: '${{ secrets.VERACODE_API_KEY }}'
           version: "${{ github.run_id }}"
           scantimeout: 0
           criticality: 'High'
@@ -66,8 +66,8 @@ jobs:
         id: pipeline-scan
         uses: veracode/Veracode-pipeline-scan-action@v1.0.18
         with:
-          vid: ${{ secrets.VID }}
-          vkey: ${{ secrets.VKEY }}
+          vid: ${{ secrets.VERACODE_API_ID }}
+          vkey: ${{ secrets.VERACODE_API_KEY }}
           file: "verademo.war"
           fail_build: "true"
           issue_details: true
